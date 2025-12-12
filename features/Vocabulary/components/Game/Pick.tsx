@@ -36,6 +36,7 @@ interface VocabPickGameProps {
 }
 
 const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
+  const hasWords = !!selectedWordObjs && selectedWordObjs.length > 0;
   const { isReverse, decideNextMode, recordWrongAnswer } =
     useSmartReverseMode();
   const score = useStatsStore(state => state.score);
@@ -61,7 +62,7 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
   // State management - correctChar always stores the word (Japanese)
   // This ensures consistency when isReverse changes dynamically
   const [correctChar, setCorrectChar] = useState(() => {
-    if (selectedWordObjs.length === 0) return '';
+    if (!hasWords) return '';
     const sourceArray = selectedWordObjs.map(obj => obj.word);
     const selected = adaptiveSelector.selectWeightedCharacter(sourceArray);
     adaptiveSelector.markCharacterSeen(selected);
@@ -123,21 +124,19 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
 
   // Update shuffled options when correctChar or isReverse changes
   useEffect(() => {
+    if (!hasWords) return;
     setShuffledOptions(
       [targetChar ?? '', ...getIncorrectOptions()].sort(
         () => random.real(0, 1) - 0.5
       ) as string[]
     );
     setWrongSelectedAnswers([]);
-  }, [correctChar, isReverse, quizType]);
-
-  if (!selectedWordObjs || selectedWordObjs.length === 0) {
-    return null;
-  }
+  }, [correctChar, hasWords, isReverse, quizType]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   useEffect(() => {
+    if (!hasWords) return;
     const handleKeyDown = (event: KeyboardEvent) => {
       const index = pickGameKeyMappings[event.code];
       if (index !== undefined && index < shuffledOptions.length) {
@@ -150,7 +149,7 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [hasWords, shuffledOptions.length]);
 
   useEffect(() => {
     if (isHidden) speedStopwatch.pause();
@@ -246,6 +245,10 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
   const optionLang =
     quizType === 'reading' ? 'ja' : isReverse ? 'ja' : undefined;
   const textSize = isReverse ? 'text-4xl md:text-7xl' : 'text-6xl md:text-9xl';
+
+  if (!hasWords) {
+    return null;
+  }
 
   return (
     <div
