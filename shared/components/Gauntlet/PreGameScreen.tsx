@@ -104,7 +104,7 @@ export default function PreGameScreen({
   // Shared design toggle for Difficulty and Mode selector sections:
   // true = New design (ActionButtons with main/secondary colors and opacity)
   // false = Old design (transparent non-selected or detailed cards)
-  const useNewSelectorDesign = true;
+  const useNewSelectorDesign = false;
 
   return (
     <div className='fixed inset-0 z-[70] overflow-y-auto bg-[var(--background-color)]'>

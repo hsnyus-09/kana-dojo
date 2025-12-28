@@ -53,7 +53,7 @@ const UnitSelector = () => {
   const isKanji = contentType === 'kanji';
 
   // Toggle between old (sliding indicator) and new (action buttons) design
-  const useNewUnitSelectorDesign = true;
+  const useNewUnitSelectorDesign = false;
 
   // Kanji store
   const {
