@@ -54,7 +54,7 @@ jobs:
               const { data: issues } = await github.rest.issues.listForRepo({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                labels: 'community',
+                labels: templates.labels.community,
                 state: 'open',
                 per_page: 100
               });

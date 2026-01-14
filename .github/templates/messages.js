@@ -5,6 +5,41 @@
 
 module.exports = {
   // =============================================================================
+  // SHARED LABELS (used across multiple workflows)
+  // =============================================================================
+  labels: {
+    // Labels applied to newly created community issues
+    newIssue: [
+      'good first issue',
+      // 'community',
+      // 'open-source',
+      'hacktoberfest',
+      // 'javascript',
+      'help wanted',
+
+      // 'enhancement'
+      'easy',
+      'up for grabs',
+      'first timers only',
+      'low hanging fruit',
+      'documentation'
+    ],
+    // Label for filtering community issues
+    community: 'community',
+    // Label for stale issue warnings
+    staleWarning: 'stale-warning'
+  },
+
+  // =============================================================================
+  // SHARED CONFIGURATION (timing, thresholds, etc.)
+  // =============================================================================
+  config: {
+    // Stale issue timing (in milliseconds)
+    staleWarningAfterMs: 2 * 24 * 60 * 60 * 1000, // 2 days
+    staleCloseAfterMs: 3 * 24 * 60 * 60 * 1000 // 3 days
+  },
+
+  // =============================================================================
   // PR QUALITY CHECK (pr-check.yml)
   // =============================================================================
   prCheck: {
@@ -153,11 +188,12 @@ module.exports = {
   // =============================================================================
   issueCreation: {
     theme: {
-      title: '[Good First Issue] 🎨 Add New Color Theme: {name}',
+      title:
+        '[Good First Issue] 🎨 Add New Color Theme: {name} (good first issue)',
       header: '## 🎨 Add New Color Theme: "{name}"',
       category: 'Community Contribution - Theme',
       difficulty: 'Easy (good first issue)',
-      estimatedTime: '1 minute',
+      estimatedTime: '1 minute (good first issue)',
       taskDescription: 'Add this beautiful new theme to KanaDojo!',
       detailsHeader: '### Theme Details',
       vibeLabel: '💡 **Vibe:**',
@@ -173,11 +209,11 @@ module.exports = {
       footer: "**Questions?** Comment below and we'll help! 🙌"
     },
     fact: {
-      title: '[Good First Issue] 🎋 Add Japan Fact #{id}',
+      title: '[Good First Issue] 🎋 Add Japan Fact #{id} (good first issue)',
       header: '## 🎋 Add New Japan Fact',
       category: 'Community Contribution - Fun Fact',
       difficulty: 'Easy (good first issue)',
-      estimatedTime: '1 minute',
+      estimatedTime: '1 minute (good first issue)',
       taskDescription:
         'Add this interesting fact about Japan to our collection!',
       factHeader: '### The Fact',

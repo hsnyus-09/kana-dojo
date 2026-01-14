@@ -131,15 +131,7 @@ jobs:
               fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
             }
 
-            const labels = [
-              'good first issue',
-              'community',
-              'open-source',
-              'hacktoberfest',
-              'javascript',
-              'help wanted',
-              'enhancement'
-            ];
+            const labels = templates.labels.newIssue;
 
             const response = await github.rest.issues.create({
               owner: context.repo.owner,

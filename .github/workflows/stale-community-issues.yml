@@ -35,14 +35,14 @@ jobs:
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: 'community',
+              labels: templates.labels.community,
               state: 'open',
               per_page: 100
             });
 
             const now = new Date();
-            const TWO_DAYS = 2 * 24 * 60 * 60 * 1000;
-            const THREE_DAYS = 3 * 24 * 60 * 60 * 1000;
+            const TWO_DAYS = templates.config.staleWarningAfterMs;
+            const THREE_DAYS = templates.config.staleCloseAfterMs;
 
             let needsCommit = false;
             let themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
@@ -55,7 +55,7 @@ jobs:
               
               const lastActivity = new Date(issue.updated_at);
               const timeSinceActivity = now - lastActivity;
-              const hasWarning = issue.labels.some(function(l) { return l.name === 'stale-warning'; });
+              const hasWarning = issue.labels.some(function(l) { return l.name === templates.labels.staleWarning; });
               
               if (timeSinceActivity >= THREE_DAYS) {
                 console.log('Closing stale issue #' + issue.number + ': ' + issue.title);
@@ -119,7 +119,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  labels: ['stale-warning']
+                  labels: [templates.labels.staleWarning]
                 });
               }
             }
