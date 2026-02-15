@@ -150,7 +150,7 @@
       "Sayonara"
     ],
     "correctIndex": 1,
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -164,7 +164,7 @@
       "Nagoya"
     ],
     "correctIndex": 0,
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -178,7 +178,7 @@
       "Tabi"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
