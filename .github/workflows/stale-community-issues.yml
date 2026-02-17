@@ -193,13 +193,18 @@ jobs:
                 // Unassign the user before closing
                 const assignees = issue.assignees.map(function(a) { return a.login; });
                 if (assignees.length > 0) {
-                  await github.rest.issues.removeAssignees({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    issue_number: issue.number,
-                    assignees: assignees
-                  });
-                  console.log(`Unassigned ${assignees.join(', ')} from issue #${issue.number}`);
+                  try {
+                    await github.rest.issues.removeAssignees({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      assignees: assignees
+                    });
+                    console.log(`Unassigned ${assignees.join(', ')} from issue #${issue.number}`);
+                  } catch (error) {
+                    // Continue stale cleanup even if assignee removal races or fails for one issue
+                    console.log(`Could not unassign issue #${issue.number}: ${error.message}`);
+                  }
                 }
                 
                 await github.rest.issues.update({
