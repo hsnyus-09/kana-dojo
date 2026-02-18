@@ -959,7 +959,9 @@
     "mainColor": "oklch(85.0% 0.125 220.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.165 45.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "Agustin-dotcom",
+    "completedPR": 5315
   },
   {
     "id": "sunrise-express",
