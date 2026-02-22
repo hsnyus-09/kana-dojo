@@ -470,7 +470,7 @@
   {
     "id": 79,
     "text": "\"〜にすぎない\" means \"no more than...\".",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -488,7 +488,7 @@
   {
     "id": 82,
     "text": "\"〜ばかりか\" means \"not only... but also\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
