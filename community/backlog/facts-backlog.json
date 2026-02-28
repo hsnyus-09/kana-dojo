@@ -357,37 +357,37 @@
     "id": 60,
     "fact": "Japan has an island called Okunoshima overrun by friendly wild rabbits - formerly a secret chemical weapons manufacturing site.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 61,
     "fact": "The Japanese concept 'kintsugi' (金継ぎ) repairs broken pottery with gold, making the piece more valuable by highlighting its history.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 62,
     "fact": "Japan's crime rate is so low that police often spend time helping lost tourists and giving directions.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 63,
     "fact": "There's a Japanese word 'aware' (哀れ) that originally just meant 'ah!' - an exclamation that evolved to represent deep emotion.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 64,
     "fact": "Japanese blood donation has such high demand that mobile donation buses give out snacks, drinks, and lottery tickets as thanks.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 65,
     "fact": "The word 'mottainai' (もったいない) expresses deep regret over waste - a concept that sparked modern recycling movements worldwide.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 66,
@@ -495,7 +495,7 @@
     "id": 83,
     "fact": "There's a Japanese word 'nekojita' (猫舌) meaning 'cat tongue' - someone who can't eat or drink hot things.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 84,
@@ -645,18 +645,18 @@
     "id": 108,
     "fact": "Japan's mobile phones had emoji in 1999 - a full 11 years before the iPhone introduced them to the Western world.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 109,
     "fact": "The Japanese word 'kuyashii' (悔しい) describes frustration mixed with determination to do better next time - no English equivalent.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 110,
     "fact": "Japan has 'maid cafes' where waitresses in maid costumes call customers 'Master' and draw cute pictures on their food.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
