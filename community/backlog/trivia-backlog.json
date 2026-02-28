@@ -584,7 +584,7 @@
       "Izakaya"
     ],
     "correctIndex": 0,
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -599,7 +599,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 44,
@@ -613,7 +613,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 45,
@@ -626,7 +626,7 @@
       "Hokkaido"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
