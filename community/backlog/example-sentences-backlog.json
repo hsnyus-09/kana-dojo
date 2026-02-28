@@ -60,7 +60,7 @@
     "jlpt": "N3",
     "id": 7,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "このアプリは初心者にも使いやすい。",
@@ -77,7 +77,7 @@
     "english": "I make a habit of reading Japanese news every day.",
     "jlpt": "N3",
     "id": 9,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
